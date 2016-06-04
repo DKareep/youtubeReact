@@ -1,7 +1,9 @@
 import React from 'react';
-const SearchBar= () => {
-    "use strict";
-    return <input />;
-};
+class SearchBar extends React.Component {
+    render() {
+        "use strict";
+        return <input/>;
 
+    }
+}
 export default SearchBar;
