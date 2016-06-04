@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 //  npm install --save youtube-api-search
 import SearchBar from './components/search_bar'
+import VideoList from './components/video_list'
 
 
 const API_KEY = "AIzaSyAiz--wlZwLBIGMJhd2qQuSH5L4jvZeDcE";
@@ -18,7 +19,7 @@ class App extends Component {
                 key: API_KEY,
                 term: 'Budha bar'
             },
-            videos => {
+                videos => {
                 "use strict";
                 this.setState({videos});
             }
@@ -28,11 +29,11 @@ class App extends Component {
     render() {
         return (  <div>
             <SearchBar />
+            <VideoList videos={this.state.videos} />
         </div>)
     }
 
-;
+
 }
-;
 
 ReactDOM.render(<App />, document.getElementById('container'));
