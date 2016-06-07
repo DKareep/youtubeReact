@@ -1,0 +1,25 @@
+.video-detail{
+    position: relative;
+    display: block;
+}
+/*.video-list-ul {*/
+    /*width: 33%;*/
+    /*float: right;*/
+/*}*/
+.video-list-ul li:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+.input-container{
+    margin: 20px;
+}
+.input-container input{
+    width: 100%;
+}
+@media (max-width: 1010px) {
+    /*.video-list-ul {*/
+        /*width: 100%;*/
+        /*display: block;*/
+        /*float: none;*/
+    /*}*/
+}

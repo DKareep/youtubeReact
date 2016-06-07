@@ -1,13 +1,18 @@
 import React from 'react';
-import VideoDetail from './video_detail'
+import VideoListDetails from './video_list_detail'
 
-const VideoList = ({videos}) => {
+const VideoList = ({videos,onVideoSelect}) => {
     "use strict";
+
     const videoListItem = videos.map(video => {
-       return <VideoDetail key={video.etag} video={video}/>
+       return <VideoListDetails
+           key={video.etag}
+           video={video}
+           onVideoSelect={onVideoSelect}
+           />
     });
     return (
-        <ul>
+        <ul className="video-list-ul col-md-4">
             {videoListItem}
         </ul>
     )

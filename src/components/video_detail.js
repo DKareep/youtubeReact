@@ -1,21 +1,24 @@
 import React from 'react';
 
-const VideoDetails = ({video}) => {
+const VideoDetail = ({video}) => {
     "use strict";
-    const imgUrl = video.snippet.thumbnails.default.url;
-    console.log(video);
+    if(!video) {
+        return <div>tada</div>
+    }
+    const videoId = video.id.videoId;
+    const url = `https://www.youtube.com/embed/${videoId}`;
     return (
-        <li className="list-group-item">
-            <div className="video-list media">
-                <div className="media-left">
-                    <img src="" alt="" className="media-object" src={imgUrl}/>
-                </div>
-                <div className="media-body">
-                    <div className="media-heading">{video.snippet.title}</div>
-                </div>
+        <div className="video-detail col-md-8">
+            <div className="embed-responsive embed-responsive-16by9">
+                <iframe src={url} frameborder="0" className="embed-responsive-item"></iframe>
             </div>
-        </li>
-    )
-};
 
-export default VideoDetails;
+            <div className="details">
+            <div>{video.snippet.title}</div>
+                <div>{video.snippet.description}</div>
+            </div>
+        </div>
+    );
+
+};
+export default VideoDetail;
